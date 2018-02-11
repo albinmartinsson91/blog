@@ -12,22 +12,15 @@ html {
 }
 
 body {
-	font-family: $fira-font-family;
 	line-height: 1;
-
-	@media (min-width:$breakpoint-lg) {
-		background:palette(grey, x-light);
-	}
-	// Added font-smoothing to prevent smudges - please review performance
+	font-family:$sans-font-family;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	color: $paragraph-color;
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: $rift-font-family;
-	font-weight: 800;
-	color: $black;
+	font-weight: 500;
 }
 
 p {

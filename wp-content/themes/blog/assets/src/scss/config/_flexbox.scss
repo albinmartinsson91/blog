@@ -2,6 +2,7 @@
 
 
 .flex { display: flex }
+.inline-flex { display: inline-flex }
 
 @media ($breakpoint-sm) {
 	.sm-flex { display: flex }

@@ -20,21 +20,24 @@
 	<body>
 
 		<!-- wrapper -->
-		<div>
+		<div class="container px3">
 
 			<!-- header -->
-			<header class="header clear" role="banner">
+			<header class="header py4 inline-flex justify-between" role="banner">
 				<?php 
 					$menuItems = wp_get_nav_menu_items("global-navigation" ); 
 				?>
+				<div class="header__logo">
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>">Home</a>
+				</div>
 
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>">Home</a>
-
-				<?php foreach ($menuItems as $key => $value) : ?>
-                        <a href="<?php echo $value->url ?>">
-                            <span><?php echo $value->title ?></span>
-                        </a>
-                <?php endforeach ?>
+				<nav class="navigation">
+					<?php foreach ($menuItems as $key => $value) : ?>
+	                    <a class="ml3" href="<?php echo $value->url ?>">
+	                        <span><?php echo $value->title ?></span>
+	                    </a>
+	                <?php endforeach ?>
+				</nav>
 
 			</header>
 			<!-- /header -->

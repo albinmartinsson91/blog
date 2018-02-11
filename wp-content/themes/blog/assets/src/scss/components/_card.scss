@@ -1,0 +1,23 @@
+.slider {
+	padding:7px 0 0 7px
+}
+
+
+.card {
+	max-width:400px;
+	width:350px;
+	margin:-7px 0 0 -7px;
+	&__img-container {
+		border:3px solid $black;
+		position:relative;
+		padding-bottom:66%;
+	}	
+
+	&__img {
+		position:absolute;
+		width:100%;
+		height:auto;
+		top:0;
+		left:0;
+	}
+}
