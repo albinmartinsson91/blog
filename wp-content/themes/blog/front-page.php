@@ -5,7 +5,8 @@
 		<section>
 
 			<h1><?php the_title(); ?></h1>
-
+			
+			<h2>Är det här framsidan?</h2>
 			
 
 		</section>

@@ -4,16 +4,28 @@
 		<!-- section -->
 		<section>
 
-			<h1><?php _e( 'Categories for ', 'html5blank' ); single_cat_title(); ?></h1>
+			<?php 
+				$categories = get_the_category();
+				$category_id = $categories[0]->cat_ID; 
+			?>
 
-			<?php get_template_part('loop'); ?>
+			<h2><?php the_category(); ?></h2>
 
-			<?php get_template_part('pagination'); ?>
+			<?php global $post;
+				$args = array('category' => $category_id );
+
+				$myposts = get_posts( $args );
+				foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
+					<li>
+						<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+					</li>
+			<?php endforeach; 
+			wp_reset_postdata();?>
+
+			
 
 		</section>
 		<!-- /section -->
 	</main>
-
-<?php get_sidebar(); ?>
 
 <?php get_footer(); ?>

@@ -15,38 +15,26 @@
 		<meta name="description" content="<?php bloginfo('description'); ?>">
 
 		<?php wp_head(); ?>
-		<script>
-        // conditionizr.com
-        // configure environment tests
-        conditionizr.config({
-            assets: '<?php echo get_template_directory_uri(); ?>',
-            tests: {}
-        });
-        </script>
 
 	</head>
-	<body <?php body_class(); ?>>
+	<body>
 
 		<!-- wrapper -->
-		<div class="wrapper">
+		<div>
 
 			<!-- header -->
 			<header class="header clear" role="banner">
+				<?php 
+					$menuItems = wp_get_nav_menu_items("global-navigation" ); 
+				?>
 
-					<!-- logo -->
-					<div class="logo">
-						<a href="<?php echo home_url(); ?>">
-							<!-- svg logo - toddmotto.com/mastering-svg-use-for-a-retina-web-fallbacks-with-png-script -->
-							<img src="<?php echo get_template_directory_uri(); ?>/img/logo.svg" alt="Logo" class="logo-img">
-						</a>
-					</div>
-					<!-- /logo -->
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>">Home</a>
 
-					<!-- nav -->
-					<nav class="nav" role="navigation">
-						<?php html5blank_nav(); ?>
-					</nav>
-					<!-- /nav -->
+				<?php foreach ($menuItems as $key => $value) : ?>
+                        <a href="<?php echo $value->url ?>">
+                            <span><?php echo $value->title ?></span>
+                        </a>
+                <?php endforeach ?>
 
 			</header>
 			<!-- /header -->
