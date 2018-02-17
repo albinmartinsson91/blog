@@ -13,7 +13,7 @@
 			 
 			<div class="front-page__categories col col-12 sm-col-8">
 				<?php foreach ( $categories as $category ) : ?>
-					<h2 class="h1 my3">
+					<h2 class="h1 my3 py1">
 						<a href="<?php echo get_category_link( $category->term_id ) ?>"><?php echo $category->name; ?></a>
 					</h2>
 				<?php endforeach ?>

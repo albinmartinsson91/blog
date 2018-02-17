@@ -40,7 +40,7 @@ gulp.task('css:dist', () => {
 // Build JS
 gulp.task('js:dist', () => {
 	// App
-	gulp.src('./assets/src/js/*.js')
+	return gulp.src('./assets/src/js/*.js')
 		.pipe(plumber({
 			errorHandler: error => {
 				gutil.beep()
@@ -71,17 +71,25 @@ gulp.task('svgmin', () => {
 })
 
 // Browsersync
-gulp.task('browsersync', () => {
-	browsersync.init({
-		proxy: "localhost",
-        notify: true,
+gulp.task('browsersync', function() {
+	var files = [
+					'**/*.php',
+					'**/*.{png,jpg,gif}'
+				];
+	browsersync.init(files, {
+
+		proxy: 'http://localhost:3000/',
+		injectChanges: true
+
 	});
-})
+});
+
 
 // Browsersync reload
 gulp.task('bs-reload', () => {
 	browsersync.reload();
 })
+
 
 // Watch
 gulp.task('watch', ['js:dist', 'css:dist', 'browsersync'], () => {
