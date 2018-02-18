@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-	<main role="main">
+	<main class="main" role="main">
 		<!-- section -->
 		<section class="front-page__hero clearfix">
 			
@@ -29,39 +29,98 @@
 		</section>
 
 
-		<section class="post-section py5">
+		<section class="post-section clearfix py5">
 			<?php $args = array(
 				'category'         => '',
 				'category_name'    => 'design',
 				'orderby'          => 'date',
 				'order'            => 'DESC',
-				'include'          => '',
-				'exclude'          => '',
-				'meta_key'         => '',
-				'meta_value'       => '',
 				'post_type'        => 'post',
-				'post_mime_type'   => '',
-				'post_parent'      => '',
-				'author'	   => '',
-				'author_name'	   => '',
 				'post_status'      => 'publish',
 				'suppress_filters' => true 
 			);
 			$posts_array = get_posts( $args ); ?>
-			
-			<div class="slider">
+			<header class="post-section__header col-12">
+				Design
+			</header>
+			<div class="article-slider clearfix mxn2">
 			<?php foreach ( $posts_array as $post ) : ?>
-				<article class="card inline-block">
-					<div class="card__img-container">
-						<img src="<?php the_post_thumbnail_url( 'card-thumbnail' ); ?>" alt="" class="card__img">
-					</div>
-					<h4 class="card__title my2"><?php the_title();?></h4>
-					<a class="card__link" href="<?php the_permalink(); ?>">Läs mer</a>
-				</article>
+				<div class="col col-8 sm-col-12 px2 md-col-6 lg-col-4">
+					<article class="card inline-block">
+						<div class="card__img-container">
+							<img src="<?php the_post_thumbnail_url( 'card-thumbnail' ); ?>" alt="" class="card__img">
+						</div>
+						<h4 class="card__title my2"><?php the_title();?></h4>
+						<a class="card__link" href="<?php the_permalink(); ?>">Läs mer</a>
+					</article>
+				</div>
 			<?php endforeach ?>
 			</div>
 		</section>
-		<!-- /section -->
+
+
+		<section class="post-section clearfix py5">
+			<?php $args = array(
+				'category'         => '',
+				'category_name'    => 'code',
+				'orderby'          => 'date',
+				'order'            => 'DESC',
+				'post_type'        => 'post',
+				'post_status'      => 'publish',
+				'suppress_filters' => true 
+			);
+			$posts_array = get_posts( $args ); ?>
+			<header class="post-section__header col-12">
+				Code
+			</header>
+			<div class="article-slider clearfix mxn2">
+			<?php foreach ( $posts_array as $post ) : ?>
+				<div class="col col-8 sm-col-12 px2 md-col-6 lg-col-4">
+					<article class="card inline-block">
+						<div class="card__img-container">
+							<img src="<?php the_post_thumbnail_url( 'card-thumbnail' ); ?>" alt="" class="card__img">
+						</div>
+						<h4 class="card__title my2"><?php the_title();?></h4>
+						<a class="card__link" href="<?php the_permalink(); ?>">Läs mer</a>
+					</article>
+				</div>
+			<?php endforeach ?>
+			</div>
+		</section>
+
+		<section class="post-section clearfix py5">
+			<?php $args = array(
+				'category'         => '',
+				'category_name'    => 'projects',
+				'orderby'          => 'date',
+				'order'            => 'DESC',
+				'post_type'        => 'post',
+				'post_status'      => 'publish',
+				'suppress_filters' => true 
+			);
+			$posts_array = get_posts( $args ); ?>
+			<header class="post-section__header col-12">
+				Projects
+			</header>
+			<div class="article-slider clearfix mxn2">
+			<?php foreach ( $posts_array as $post ) : ?>
+				<div class="col col-8 sm-col-12 px2 md-col-6 lg-col-4">
+					<article class="card inline-block">
+						<div class="card__img-container">
+							<img src="<?php the_post_thumbnail_url( 'card-thumbnail' ); ?>" alt="" class="card__img">
+						</div>
+						<h4 class="card__title my2"><?php the_title();?></h4>
+						<a class="card__link" href="<?php the_permalink(); ?>">Läs mer</a>
+					</article>
+				</div>
+			<?php endforeach ?>
+			</div>
+		</section>
+
+
+
+
+
 	</main>
 
 <?php get_footer(); ?>

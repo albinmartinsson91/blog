@@ -2515,6 +2515,13 @@ gulp-concat@^2.6.1:
     through2 "^2.0.0"
     vinyl "^2.0.0"
 
+gulp-connect-php@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/gulp-connect-php/-/gulp-connect-php-1.0.1.tgz#0da0c50ba0a31ad50e2480b6bd05713d27f27808"
+  dependencies:
+    bin-version-check "^2.1.0"
+    opn "^1.0.0"
+
 gulp-cssnano@^2.1.2:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/gulp-cssnano/-/gulp-cssnano-2.1.2.tgz#e08a09771ec5454a549f1a005bdd256cb8e5e0a3"
@@ -4373,6 +4380,10 @@ opn@4.0.2:
   dependencies:
     object-assign "^4.0.1"
     pinkie-promise "^2.0.0"
+
+opn@^1.0.0:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/opn/-/opn-1.0.2.tgz#b909643346d00a1abc977a8b96f3ce3c53d5cf5f"
 
 optipng-bin@^3.0.0:
   version "3.1.4"

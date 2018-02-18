@@ -18,7 +18,7 @@
 	<body>
 
 		<!-- wrapper -->
-		<div class="container px3">
+		<div class="container">
 
 			<!-- header -->
 			<header class="header py4 inline-flex justify-between" role="banner">
